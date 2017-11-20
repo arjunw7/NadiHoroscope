@@ -25739,8 +25739,8 @@ body {
 
 .assessmentPage {
   height: 100vh;
-  background: -webkit-gradient(linear, left top, right bottom, from(#1d0f69), to(#cc149c));
-  background: linear-gradient(to bottom right, #1d0f69, #cc149c);
+  background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
+  background: linear-gradient(to bottom right, #17279a, #22bdd0);
   text-align: center;
 }
 
@@ -25814,9 +25814,9 @@ body {
 }
 
 .newAssessmentPage {
-  height: 100vh;
-  background: -webkit-gradient(linear, left top, right bottom, from(#1d0f69), to(#cc149c));
-  background: linear-gradient(to bottom right, #1d0f69, #cc149c);
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
+  background: linear-gradient(to bottom right, #17279a, #22bdd0);
   text-align: center;
 }
 
@@ -25838,9 +25838,8 @@ label {
   margin-top: 2rem;
   font-weight: lighter;
   outline: none;
-  position: absolute;
-  bottom: 3rem;
   left: 0;
+  margin-bottom: 2rem;
 }
 
 .newAssButtons {
@@ -25867,6 +25866,10 @@ label {
   padding: 0rem 0.8rem;
 }
 
+.capturedImage {
+  padding: 2rem 10%;
+}
+
 .plantTag {
   font-size: 2.5rem;
   color: white;
@@ -25877,8 +25880,8 @@ label {
 
 .plantsPage {
   height: 100vh;
-  background: -webkit-gradient(linear, left top, right bottom, from(#1d0f69), to(#cc149c));
-  background: linear-gradient(to bottom right, #1d0f69, #cc149c);
+  background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
+  background: linear-gradient(to bottom right, #17279a, #22bdd0);
   text-align: center;
 }
 

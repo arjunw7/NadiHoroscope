@@ -12,7 +12,10 @@
             <div class="midText">
                 or
             </div>
-            <button>Capture</button>
+            <button (click)="takePicture()">Capture</button>
+        </div>
+        <div class="capturedImage">
+            <img [src]="base64Image" *ngIf="base64Image" />
         </div>
         <label>File name</label><br>
         <input type="text"><br>
@@ -34,6 +37,7 @@
         </select><br>
         <label>Description</label><br>
         <input type="text">
+        <br>
         <div class="newAssessmentSubmit">
             <button>Continue</button>
         </div>

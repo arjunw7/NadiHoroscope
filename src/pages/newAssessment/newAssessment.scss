@@ -11,9 +11,9 @@
 }
 
 .newAssessmentPage {
-    height: 100vh;
-    background: -webkit-gradient(linear, left top, right bottom, from(#1d0f69), to(#cc149c));
-    background: linear-gradient(to bottom right, #1d0f69, #cc149c);
+    min-height: 100vh;
+    background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
+    background: linear-gradient(to bottom right, #17279a, #22bdd0);
     text-align: center;
 }
 
@@ -22,7 +22,7 @@ label {
     position: absolute;
     left: 10%;
     margin-top: 1.5rem;
-    font-size: 1.2rem
+    font-size: 1.2rem;
 }
 
 .newAssessmentSubmit button {
@@ -35,9 +35,8 @@ label {
     margin-top: 2rem;
     font-weight: lighter;
     outline: none;
-    position: absolute;
-    bottom: 3rem;
     left: 0;
+    margin-bottom: 2rem
 }
 
 .newAssButtons {
@@ -62,4 +61,8 @@ label {
     color: white;
     display: inline-block;
     padding: 0rem 0.8rem;
+}
+
+.capturedImage {
+    padding: 2rem 10%
 }
