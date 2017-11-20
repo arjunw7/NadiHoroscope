@@ -33,6 +33,9 @@
         },
         "cordova-plugin-ionic-webview": {
             "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
+        },
+        "cordova-plugin-filechooser": {
+            "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
         }
     },
     "dependent_plugins": {

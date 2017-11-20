@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 167:
+/***/ 168:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -13,11 +13,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 167;
+webpackEmptyAsyncContext.id = 168;
 
 /***/ }),
 
-/***/ 208:
+/***/ 209:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -30,7 +30,7 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 208;
+webpackEmptyAsyncContext.id = 209;
 
 /***/ }),
 
@@ -161,7 +161,8 @@ var AssessmentsPage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewAssessmentPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_native__ = __webpack_require__(566);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_native__ = __webpack_require__(567);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_file_chooser__ = __webpack_require__(491);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -174,9 +175,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var NewAssessmentPage = (function () {
-    function NewAssessmentPage(navCtrl) {
+    function NewAssessmentPage(navCtrl, fileChooser) {
         this.navCtrl = navCtrl;
+        this.fileChooser = fileChooser;
     }
     NewAssessmentPage.prototype.takePicture = function () {
         var _this = this;
@@ -191,11 +194,16 @@ var NewAssessmentPage = (function () {
             console.log(err);
         });
     };
+    NewAssessmentPage.prototype.uploadFile = function () {
+        this.fileChooser.open()
+            .then(function (uri) { return console.log(uri); })
+            .catch(function (e) { return console.log(e); });
+    };
     NewAssessmentPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'newAssessment',template:/*ion-inline-start:"C:\Users\212601219\Desktop\ionreddit\src\pages\newAssessment\newAssessment.html"*/`<ion-content>\n\n    <div class="newAssessmentPage">\n\n        <div class="plantName">\n\n            Satpura Thermal Station\n\n        </div>\n\n        <div class="plantAddress">\n\n            Sarni, Madhya Pradesh, India\n\n        </div>\n\n\n\n        <div class="newAssButtons">\n\n            <button>Upload</button>\n\n            <div class="midText">\n\n                or\n\n            </div>\n\n            <button (click)="takePicture()">Capture</button>\n\n        </div>\n\n        <div class="capturedImage">\n\n            <img [src]="base64Image" *ngIf="base64Image" />\n\n        </div>\n\n        <label>File name</label><br>\n\n        <input type="text"><br>\n\n        <label>Category</label><br>\n\n        <select>\n\n            <option value=""></option>\n\n            <option value="">Boiler 1</option>\n\n            <option value="">Boiler 2</option>\n\n            <option value="">Boiler 3</option>\n\n            <option value="">Boiler 4</option>\n\n        </select><br>\n\n        <label>Sub-category</label><br>\n\n        <select>\n\n            <option value=""></option>\n\n            <option value="">Boiler 1</option>\n\n            <option value="">Boiler 2</option>\n\n            <option value="">Boiler 3</option>\n\n            <option value="">Boiler 4</option>\n\n        </select><br>\n\n        <label>Description</label><br>\n\n        <input type="text">\n\n        <br>\n\n        <div class="newAssessmentSubmit">\n\n            <button>Continue</button>\n\n        </div>\n\n    </div>\n\n</ion-content>`/*ion-inline-end:"C:\Users\212601219\Desktop\ionreddit\src\pages\newAssessment\newAssessment.html"*/
+            selector: 'newAssessment',template:/*ion-inline-start:"C:\Users\212601219\Desktop\ionreddit\src\pages\newAssessment\newAssessment.html"*/`<ion-content>\n\n    <div class="newAssessmentPage">\n\n        <div class="plantName">\n\n            Satpura Thermal Station\n\n        </div>\n\n        <div class="plantAddress">\n\n            Sarni, Madhya Pradesh, India\n\n        </div>\n\n\n\n        <div class="newAssButtons">\n\n            <button (click)="uploadFile()">Upload</button>\n\n            <div class="midText">\n\n                or\n\n            </div>\n\n            <button (click)="takePicture()">Capture</button>\n\n        </div>\n\n        <div class="capturedImage">\n\n            {{base64Image}}\n\n            <img [src]="base64Image" *ngIf="base64Image" />\n\n        </div>\n\n        <label>File name</label><br>\n\n        <input type="text"><br>\n\n        <label>Category</label><br>\n\n        <select>\n\n            <option value=""></option>\n\n            <option value="">Boiler 1</option>\n\n            <option value="">Boiler 2</option>\n\n            <option value="">Boiler 3</option>\n\n            <option value="">Boiler 4</option>\n\n        </select><br>\n\n        <label>Sub-category</label><br>\n\n        <select>\n\n            <option value=""></option>\n\n            <option value="">Boiler 1</option>\n\n            <option value="">Boiler 2</option>\n\n            <option value="">Boiler 3</option>\n\n            <option value="">Boiler 4</option>\n\n        </select><br>\n\n        <label>Description</label><br>\n\n        <input type="text">\n\n        <br>\n\n        <div class="newAssessmentSubmit">\n\n            <button>Continue</button>\n\n        </div>\n\n    </div>\n\n</ion-content>`/*ion-inline-end:"C:\Users\212601219\Desktop\ionreddit\src\pages\newAssessment\newAssessment.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_file_chooser__["a" /* FileChooser */]])
     ], NewAssessmentPage);
     return NewAssessmentPage;
 }());
@@ -204,13 +212,13 @@ var NewAssessmentPage = (function () {
 
 /***/ }),
 
-/***/ 491:
+/***/ 492:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(492);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(515);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(493);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(516);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -218,7 +226,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 515:
+/***/ 516:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -226,19 +234,21 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(558);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(559);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(252);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_plants_plants__ = __webpack_require__(253);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_assessments_assessments__ = __webpack_require__(254);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_newAssessment_newAssessment__ = __webpack_require__(255);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(249);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_file_chooser__ = __webpack_require__(491);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -278,6 +288,7 @@ var AppModule = (function () {
             providers: [
                 __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_10__ionic_native_file_chooser__["a" /* FileChooser */],
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
             ]
         })
@@ -289,14 +300,14 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 558:
+/***/ 559:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(249);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(251);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(252);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -335,5 +346,5 @@ var MyApp = (function () {
 
 /***/ })
 
-},[491]);
+},[492]);
 //# sourceMappingURL=main.js.map

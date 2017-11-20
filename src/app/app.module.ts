@@ -10,6 +10,7 @@ import { NewAssessmentPage } from '../pages/newAssessment/newAssessment';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { FileChooser } from '@ionic-native/file-chooser';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    FileChooser,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

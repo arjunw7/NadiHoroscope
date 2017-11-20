@@ -8,13 +8,14 @@
         </div>
 
         <div class="newAssButtons">
-            <button>Upload</button>
+            <button (click)="uploadFile()">Upload</button>
             <div class="midText">
                 or
             </div>
             <button (click)="takePicture()">Capture</button>
         </div>
         <div class="capturedImage">
+            {{base64Image}}
             <img [src]="base64Image" *ngIf="base64Image" />
         </div>
         <label>File name</label><br>

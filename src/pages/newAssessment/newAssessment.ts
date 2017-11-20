@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {Camera} from 'ionic-native';
+import { FileChooser } from '@ionic-native/file-chooser';
 
 @Component({
   selector: 'newAssessment',
@@ -8,7 +9,7 @@ import {Camera} from 'ionic-native';
 })
 export class NewAssessmentPage {
   public base64Image: string;
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private fileChooser: FileChooser) {
 
   }
 
@@ -23,6 +24,12 @@ export class NewAssessmentPage {
     }, (err) => {
         console.log(err);
     });
+  }
+
+  uploadFile(){
+  this.fileChooser.open()
+  .then(uri => console.log(uri))
+  .catch(e => console.log(e));
   }
 
 }
