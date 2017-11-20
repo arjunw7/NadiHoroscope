@@ -1,0 +1,23 @@
+@font-face {
+    font-family: geInspiraRegular;
+    src: url('../fonts/GEInspiraSans-Regular.ttf?#iefix'), url('../fonts/GEInspiraSans-Regular.otf?#iefix');
+}
+
+@font-face {
+    font-family: geInspiraBold;
+    src: url('../fonts/GEInspiraSans-Bold.ttf'), url('../fonts/GEInspiraSans-Bold.otf');
+}
+
+@font-face {
+    font-family: geInspiraBoldItalic;
+    src: url('../fonts/GEInspiraSans-BoldItalic.ttf'), url('../fonts/GEInspiraSans-BoldItalic.otf');
+}
+
+@font-face {
+    font-family: geInspiraItalic;
+    src: url('../fonts/GEInspiraSans-Italic.ttf'), url('../fonts/GEInspiraSans-Italic.otf');
+}
+
+body {
+    font-fasmily: geInspiraRegular
+}

@@ -1,0 +1,40 @@
+.plantTag {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: lighter;
+    padding: 25rem 0rem 1rem 0rem;
+    text-align: center
+}
+
+.plantsPage {
+    height: 100vh;
+    background: -webkit-gradient(linear, left top, right bottom, from(#1d0f69), to(#cc149c));
+    background: linear-gradient(to bottom right, #1d0f69, #cc149c);
+    text-align: center
+}
+
+.plantsPage button {
+    border-radius: 30px;
+    padding: 2rem 1rem;
+    background-color: #efefef;
+    width: 80%;
+    margin: 0% 10%;
+    font-size: 2rem;
+    margin-top: 2rem;
+    font-weight: lighter;
+    outline: none;
+    position: absolute;
+    bottom: 5rem;
+    left: 0;
+}
+
+.plantsPage select {
+    width: 80%;
+    font-size: 2rem;
+    padding: 1rem;
+    margin-top: 2rem;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 1px solid
+}

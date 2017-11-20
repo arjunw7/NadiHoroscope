@@ -1,0 +1,56 @@
+.plantName {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: lighter;
+    padding: 5rem 10% 0.5rem 10%;
+    text-align: left;
+}
+
+.plantAddress {
+    font-size: 1.7rem;
+    color: white;
+    font-weight: lighter;
+    padding: 0rem 10% 0.5rem 10%;
+    text-align: left;
+}
+
+.assessmentTag {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: lighter;
+    padding: 15rem 10% 1rem 10%;
+    text-align: center;
+}
+
+.assessmentPage select {
+    width: 80%;
+    font-size: 2rem;
+    padding: 1rem;
+    margin-top: 2rem;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 1px solid;
+}
+
+.assessmentPage {
+    height: 100vh;
+    background: -webkit-gradient(linear, left top, right bottom, from(#1d0f69), to(#cc149c));
+    background: linear-gradient(to bottom right, #1d0f69, #cc149c);
+    text-align: center;
+}
+
+.assessmentPage button {
+    border-radius: 30px;
+    padding: 2rem 1rem;
+    background-color: #efefef;
+    width: 80%;
+    margin: 0% 10%;
+    font-size: 2rem;
+    margin-top: 2rem;
+    font-weight: lighter;
+    outline: none;
+    position: absolute;
+    bottom: 5rem;
+    left: 0;
+}

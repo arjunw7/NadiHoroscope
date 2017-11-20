@@ -1,0 +1,40 @@
+.homePage {
+    height: 100vh;
+    background: linear-gradient(to bottom right, #17279a, #22bdd0);
+}
+
+.logo {
+    padding: 10rem 0rem 2rem 0rem;
+    text-align: center
+}
+
+.logo img {
+    width: 15rem;
+}
+
+.homeButtons {
+    position: absolute;
+    width: 100%;
+    bottom: 10rem;
+}
+
+.homeButtons button {
+    border-radius: 30px;
+    padding: 2rem 1rem;
+    background-color: #efefef;
+    width: 80%;
+    margin: 0% 10%;
+    font-size: 2rem;
+    margin-top: 2rem;
+    font-weight: lighter;
+    outline: none;
+}
+
+.footer {
+    color: white;
+    position: absolute;
+    height: 3rem;
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+}
