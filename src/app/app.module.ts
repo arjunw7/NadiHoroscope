@@ -8,6 +8,9 @@ import { PlantsPage } from '../pages/plants/plants';
 import { AssessmentsPage } from '../pages/assessments/assessments';
 import { NewAssessmentPage } from '../pages/newAssessment/newAssessment';
 
+import { PouchService } from '../services/pouchService';
+
+import { FormsModule } from '@angular/forms';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FileChooser } from '@ionic-native/file-chooser';
@@ -22,6 +25,7 @@ import { FileChooser } from '@ionic-native/file-chooser';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -36,6 +40,7 @@ import { FileChooser } from '@ionic-native/file-chooser';
     StatusBar,
     SplashScreen,
     FileChooser,
+    PouchService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

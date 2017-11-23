@@ -1,10 +1,10 @@
 <ion-content>
     <div class="newAssessmentPage">
         <div class="plantName">
-            Satpura Thermal Station
+            {{selectedPlant.plant_name}}
         </div>
         <div class="plantAddress">
-            Sarni, Madhya Pradesh, India
+            {{selectedPlant.plant_address}}
         </div>
 
         <div class="newAssButtons">
@@ -15,8 +15,7 @@
             <button (click)="takePicture()">Capture</button>
         </div>
         <div class="capturedImage">
-            {{base64Image}}
-            <img [src]="base64Image" *ngIf="base64Image" />
+            <img [src]="base64Image" *ngIf="base64Image" /> {{selectedFile}}
         </div>
         <label>File name</label><br>
         <input type="text"><br>

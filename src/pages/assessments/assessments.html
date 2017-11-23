@@ -1,21 +1,17 @@
 <ion-content>
     <div class="assessmentPage">
         <div class="plantName">
-            Satpura Thermal Station
+            {{selectedPlant.plant_name}}
         </div>
         <div class="plantAddress">
-            Sarni, Madhya Pradesh, India
+            {{selectedPlant.plant_address}}
         </div>
         <div class="assessmentTag">
             Select Assessment
         </div>
-        <select>
-            <option value="">Create New</option>
-            <option value="">Assessment 1</option>
-            <option value="">Assessment 2</option>
-            <option value="">Assessment 3</option>
-            <option value="">Assessment 4</option>
+        <select [(ngModel)]="assessment_id">
+            <option *ngFor="let item of assessmentList" value="{{item.id}}">{{item.assessment_name}}</option>
         </select>
-        <button (click)="newAssessmentsPage()">Continue</button>
+        <button (click)="newAssessmentsPage(assessment_id)">Continue</button>
     </div>
 </ion-content>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import {Camera} from 'ionic-native';
 import { FileChooser } from '@ionic-native/file-chooser';
 
@@ -9,8 +9,10 @@ import { FileChooser } from '@ionic-native/file-chooser';
 })
 export class NewAssessmentPage {
   public base64Image: string;
-  constructor(public navCtrl: NavController, private fileChooser: FileChooser) {
-
+  public selectedFile: string;
+  selectedPlant:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private fileChooser: FileChooser) {
+    this.selectedPlant= navParams.get('currentPlant');
   }
 
   takePicture(){
@@ -19,8 +21,8 @@ export class NewAssessmentPage {
         targetWidth: 1000,
         targetHeight: 1000
     }).then((imageData) => {
-      // imageData is a base64 encoded string
         this.base64Image = "data:image/jpeg;base64," + imageData;
+        this.selectedFile = '';
     }, (err) => {
         console.log(err);
     });
@@ -28,7 +30,10 @@ export class NewAssessmentPage {
 
   uploadFile(){
   this.fileChooser.open()
-  .then(uri => console.log(uri))
+  .then(function(uri){
+    this.selectedFile = uri;
+    this.base64Image = '';
+  })
   .catch(e => console.log(e));
   }
 
