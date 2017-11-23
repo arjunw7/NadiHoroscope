@@ -61,9 +61,41 @@ var HomePage = (function () {
         var _this = this;
         this.navCtrl = navCtrl;
         this.pouchService = pouchService;
+        this.dbInit = {
+            "_id": "212601219",
+            "plants": [
+                {
+                    "id": 1,
+                    "plant_name": "Satpura Thermal Power Station",
+                    "plant_address": "Sarni, Madhya Pradesh, India",
+                    "assessments": [
+                        { "id": 1, "plant_id": 1, "assessment_name": "Field Visit", "assessment_date": "2017-02-10", "user_name": "Mohit Rai" },
+                        { "id": 2, "plant_id": 1, "assessment_name": "Mock Assessment", "assessment_date": "2017-03-10", "user_name": "Mohit Rai" }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "plant_name": "ONGC Tripura Power Company",
+                    "plant_address": "Palatana, Udaipur, India",
+                    "assessments": []
+                },
+                {
+                    "id": 3,
+                    "plant_name": "Yelahanka Diesel Power Station",
+                    "plant_address": "Yelahanka, Bangalore, India",
+                    "assessments": []
+                },
+                {
+                    "id": 4,
+                    "plant_name": "Gangtok Diesel Power Station",
+                    "plant_address": "Gangtok, Sikkim, India",
+                    "assessments": []
+                }
+            ]
+        };
+        this.pouchService.updatePlants(this.dbInit);
         this.pouchService.getData().then(function (data) {
             _this.allData = data;
-            console.log(_this.allData);
         });
     }
     HomePage.prototype.showPlantsPage = function () {
@@ -115,7 +147,6 @@ var PlantsPage = (function () {
         });
     }
     PlantsPage.prototype.showAssessmentsPage = function (id) {
-        console.log(id);
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__assessments_assessments__["a" /* AssessmentsPage */], {
             plant_id: id
         });
@@ -444,12 +475,19 @@ var PouchService = (function () {
             });
         });
     };
-    //   createTodo(todo){
-    //   }
-    //   updateTodo(todo){
-    //   }
-    //   deleteTodo(todo){
-    //   }
+    PouchService.prototype.createPlants = function (plant) {
+        this.db.post(plant);
+    };
+    PouchService.prototype.updatePlants = function (plant) {
+        this.db.put(plant).catch(function (err) {
+            console.log(err);
+        });
+    };
+    PouchService.prototype.deletePlants = function (plant) {
+        this.db.remove(plant).catch(function (err) {
+            console.log(err);
+        });
+    };
     PouchService.prototype.handleChange = function (change) {
         var changedDoc = null;
         var changedIndex = null;

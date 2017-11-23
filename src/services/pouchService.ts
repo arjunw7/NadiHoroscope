@@ -60,17 +60,21 @@ export class PouchService {
     
    }
  
-//   createTodo(todo){
- 
-//   }
- 
-//   updateTodo(todo){
- 
-//   }
- 
-//   deleteTodo(todo){
- 
-//   }
+   createPlants(plant){
+    this.db.post(plant);
+  }
+   
+  updatePlants(plant){
+    this.db.put(plant).catch((err) => {
+      console.log(err);
+    });
+  }
+   
+  deletePlants(plant){
+    this.db.remove(plant).catch((err) => {
+      console.log(err);
+    });
+  }
  
 handleChange(change){
     
