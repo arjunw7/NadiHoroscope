@@ -7,13 +7,17 @@ import { HomePage } from '../pages/home/home';
 import { PlantsPage } from '../pages/plants/plants';
 import { AssessmentsPage } from '../pages/assessments/assessments';
 import { NewAssessmentPage } from '../pages/newAssessment/newAssessment';
+import { FilesPage } from '../pages/files/files';
 
 import { PouchService } from '../services/pouchService';
 
 import { FormsModule } from '@angular/forms';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { FileChooser } from '@ionic-native/file-chooser';
+import { File } from '@ionic-native/file';
+import { Transfer } from '@ionic-native/transfer';
+import { Camera } from '@ionic-native/camera';
+import { FilePath } from '@ionic-native/file-path';
 
 @NgModule({
   declarations: [
@@ -21,8 +25,9 @@ import { FileChooser } from '@ionic-native/file-chooser';
     HomePage,
     PlantsPage,
     AssessmentsPage,
-    NewAssessmentPage
-  ],
+    NewAssessmentPage,
+    FilesPage
+  ], 
   imports: [
     BrowserModule,
     FormsModule,
@@ -34,13 +39,17 @@ import { FileChooser } from '@ionic-native/file-chooser';
     HomePage,
     PlantsPage,
     AssessmentsPage,
-    NewAssessmentPage
+    NewAssessmentPage,
+    FilesPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    FileChooser,
     PouchService,
+    Transfer,
+    Camera,
+    FilePath,
+    File,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

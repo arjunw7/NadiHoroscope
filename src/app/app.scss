@@ -1,23 +1,32 @@
 @font-face {
     font-family: geInspiraRegular;
-    src: url('../fonts/GEInspiraSans-Regular.ttf?#iefix'), url('../fonts/GEInspiraSans-Regular.otf?#iefix');
+    src: url('fonts/GEInspiraSans-Regular.ttf?#iefix'), url('fonts/GEInspiraSans-Regular.otf?#iefix');
 }
 
 @font-face {
     font-family: geInspiraBold;
-    src: url('../fonts/GEInspiraSans-Bold.ttf'), url('../fonts/GEInspiraSans-Bold.otf');
+    src: url('fonts/GEInspiraSans-Bold.ttf'), url('fonts/GEInspiraSans-Bold.otf');
 }
 
 @font-face {
     font-family: geInspiraBoldItalic;
-    src: url('../fonts/GEInspiraSans-BoldItalic.ttf'), url('../fonts/GEInspiraSans-BoldItalic.otf');
+    src: url('fonts/GEInspiraSans-BoldItalic.ttf'), url('fonts/GEInspiraSans-BoldItalic.otf');
 }
 
 @font-face {
     font-family: geInspiraItalic;
-    src: url('../fonts/GEInspiraSans-Italic.ttf'), url('../fonts/GEInspiraSans-Italic.otf');
+    src: url('fonts/GEInspiraSans-Italic.ttf'), url('fonts/GEInspiraSans-Italic.otf');
 }
 
 body {
-    font-fasmily: geInspiraRegular
+    font-family: geInspiraRegular
+}
+
+ion-icon {
+    background-color: transparent;
+    position: absolute;
+    color: white;
+    left: 7%;
+    top: 2rem;
+    font-size: 2rem
 }

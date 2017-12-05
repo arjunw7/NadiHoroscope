@@ -1,11 +1,17 @@
 <ion-content>
+    <ion-icon (click)="goBack()" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
     <div class="homePage">
-        <div class="logo">
-            <img src="assets/imgs/monogram.png" alt="" srcset="">
+        <div class="plantName">
+            {{currentPlant.plant_name}}
+        </div>
+        <div class="plantAddress">
+            {{currentPlant.plant_address}}
         </div>
         <div class="homeButtons">
-            <button (click)="showPlantsPage()">Plant Assessment</button>
-            <button>Analyse data</button>
+            <button>Value Calculator</button>
+            <button (click)="showPlantsPage()">Assessment</button>
+            <button>Solution Configurator</button>
+            <button>Solution Stack</button>
         </div>
     </div>
     <div class="footer">

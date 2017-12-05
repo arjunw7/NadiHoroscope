@@ -25680,26 +25680,35 @@ ion-navbar.toolbar {
 
 @font-face {
   font-family: geInspiraRegular;
-  src: url("../fonts/GEInspiraSans-Regular.ttf?#iefix"), url("../fonts/GEInspiraSans-Regular.otf?#iefix");
+  src: url("fonts/GEInspiraSans-Regular.ttf?#iefix"), url("fonts/GEInspiraSans-Regular.otf?#iefix");
 }
 
 @font-face {
   font-family: geInspiraBold;
-  src: url("../fonts/GEInspiraSans-Bold.ttf"), url("../fonts/GEInspiraSans-Bold.otf");
+  src: url("fonts/GEInspiraSans-Bold.ttf"), url("fonts/GEInspiraSans-Bold.otf");
 }
 
 @font-face {
   font-family: geInspiraBoldItalic;
-  src: url("../fonts/GEInspiraSans-BoldItalic.ttf"), url("../fonts/GEInspiraSans-BoldItalic.otf");
+  src: url("fonts/GEInspiraSans-BoldItalic.ttf"), url("fonts/GEInspiraSans-BoldItalic.otf");
 }
 
 @font-face {
   font-family: geInspiraItalic;
-  src: url("../fonts/GEInspiraSans-Italic.ttf"), url("../fonts/GEInspiraSans-Italic.otf");
+  src: url("fonts/GEInspiraSans-Italic.ttf"), url("fonts/GEInspiraSans-Italic.otf");
 }
 
 body {
-  font-fasmily: geInspiraRegular;
+  font-family: geInspiraRegular;
+}
+
+ion-icon {
+  background-color: transparent;
+  position: absolute;
+  color: white;
+  left: 7%;
+  top: 2rem;
+  font-size: 2rem;
 }
 
 .plantName {
@@ -25722,7 +25731,15 @@ body {
   font-size: 2.5rem;
   color: white;
   font-weight: lighter;
-  padding: 15rem 10% 1rem 10%;
+  padding: 10rem 10% 1rem 10%;
+  text-align: center;
+}
+
+.assessmentTag2 {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: lighter;
+  padding: 10rem 10% 1rem 10%;
   text-align: center;
 }
 
@@ -25730,7 +25747,7 @@ body {
   width: 80%;
   font-size: 2rem;
   padding: 1rem;
-  margin-top: 2rem;
+  margin-top: 0rem;
   background-color: transparent;
   color: white;
   border: none;
@@ -25759,6 +25776,30 @@ body {
   left: 0;
 }
 
+.midOr {
+  color: white;
+  font-size: 1.9rem;
+  margin-top: 2rem;
+}
+
+.createNewButton button {
+  border-radius: 30px;
+  padding: 1.6rem 1rem !important;
+  background-color: transparent !important;
+  border: 2px solid white !important;
+  width: 80% !important;
+  color: white !important;
+  position: relative !important;
+  margin-top: 6rem !important;
+}
+
+.filesPage {
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
+  background: linear-gradient(to bottom right, #17279a, #22bdd0);
+  text-align: center;
+}
+
 .homePage {
   height: 100vh;
   background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
@@ -25766,7 +25807,7 @@ body {
 }
 
 .logo {
-  padding: 10rem 0rem 2rem 0rem;
+  padding: 5rem 0rem 2rem 0rem;
   text-align: center;
 }
 
@@ -25847,17 +25888,14 @@ label {
 }
 
 .newAssButtons button {
-  border-radius: 30px !important;
-  padding: 1rem 1rem !important;
-  background-color: #efefef !important;
-  width: 35% !important;
-  font-size: 1.8rem !important;
-  margin-top: 2rem !important;
-  font-weight: lighter !important;
-  outline: none !important;
-  left: 0 !important;
-  position: relative;
-  display: inline-block;
+  border-radius: 30px;
+  padding: 1.6rem 1rem !important;
+  background-color: transparent !important;
+  border: 2px solid white !important;
+  width: 80% !important;
+  color: white !important;
+  position: relative !important;
+  margin-top: 1rem !important;
 }
 
 .midText {
@@ -25874,7 +25912,7 @@ label {
   font-size: 2.5rem;
   color: white;
   font-weight: lighter;
-  padding: 25rem 0rem 1rem 0rem;
+  padding: 6rem 0rem 1rem 0rem;
   text-align: center;
 }
 
@@ -25904,9 +25942,15 @@ label {
   width: 80%;
   font-size: 2rem;
   padding: 1rem;
-  margin-top: 2rem;
+  margin-top: 0rem;
   background-color: transparent;
   color: white;
   border: none;
   border-bottom: 1px solid;
+}
+
+.appName {
+  color: white;
+  font-size: 2.5rem;
+  padding: 3rem 3rem 0rem 3rem;
 }

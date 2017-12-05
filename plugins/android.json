@@ -36,6 +36,15 @@
         },
         "cordova-plugin-filechooser": {
             "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
+        },
+        "cordova-plugin-filepath": {
+            "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
         }
     },
     "dependent_plugins": {
