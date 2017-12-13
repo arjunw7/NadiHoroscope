@@ -18,6 +18,7 @@ import { File } from '@ionic-native/file';
 import { Transfer } from '@ionic-native/transfer';
 import { Camera } from '@ionic-native/camera';
 import { FilePath } from '@ionic-native/file-path';
+import { FileChooser } from '@ionic-native/file-chooser';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { FilePath } from '@ionic-native/file-path';
     Camera,
     FilePath,
     File,
+    FileChooser,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

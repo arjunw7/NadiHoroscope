@@ -12,12 +12,18 @@ import { NewAssessmentPage } from '../newAssessment/newAssessment';
 })
 export class HomePage {
   currentPlant:any;
+  currentProject:any;
+  currentProjectName:any;
   constructor(public navCtrl: NavController,public navParams: NavParams, public pouchService: PouchService) {
     this.currentPlant= navParams.get('currentPlant');
+    this.currentProject = navParams.get('currentProject')
+    this.currentProjectName = this.currentPlant.assessments[this.currentProject-1].assessment_name
+
   }
   showPlantsPage() {
       this.navCtrl.push(NewAssessmentPage, {
-        currentPlant: this.currentPlant
+        currentPlant: this.currentPlant,
+        currentProject_id:this.currentProject
       });
   }
   showFilesPage() {

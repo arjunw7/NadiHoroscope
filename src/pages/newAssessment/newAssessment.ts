@@ -4,6 +4,7 @@ import { File } from '@ionic-native/file';
 import { Transfer, TransferObject } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
+import { FileChooser } from '@ionic-native/file-chooser';
 
 declare var cordova: any;
 
@@ -217,15 +218,64 @@ export class NewAssessmentPage {
   public base64Image: string;
   public selectedFile: string;
   selectedPlant:any;
+  selectedProject:any;
   fileName:any;
   subCategory:any;
-  description:any;
+  subCategory1:any;
   lastImage: string = null;
   loading: Loading;
   correctPath:any;
   currentName:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private transfer: Transfer, private file: File, private filePath: FilePath, public actionSheetCtrl: ActionSheetController, public toastCtrl: ToastController, public platform: Platform, public loadingCtrl: LoadingController) {
+  currentProject_id:any;
+  fullPath:any;
+  currentProjectName:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private transfer: Transfer, private file: File, private filePath: FilePath, public actionSheetCtrl: ActionSheetController, public toastCtrl: ToastController, public platform: Platform, public loadingCtrl: LoadingController, private fileChooser: FileChooser) {
     this.selectedPlant= navParams.get('currentPlant');
+    this.currentProject_id=navParams.get('currentProject_id');
+    this.currentProject_id= this.currentProject_id-1;
+    this.currentProjectName = this.selectedPlant.assessments[this.currentProject_id].assessment_name;
+    console.log(this.currentProjectName)
+    //Directory setup in phone memory
+    this.createInnerDirectories()
+    
+
+     
+
+  }
+
+  createInnerDirectories(){
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait while the directories are being initialised.'
+    }); 
+    loading.present();
+
+    for(var i = 0; i < this.folderStructure.length; i++){
+      this.file.createDir(this.file.externalRootDirectory+'PlantData/'+this.selectedPlant.plant_name+ '/'+this.selectedPlant.assessments[this.currentProject_id].assessment_name+'/',this.folderStructure[i].categoryName, false).then(success =>{
+        for(var l=0; l<this.folderStructure.length; l++){
+            for(var j=0; j < this.folderStructure[l].subCategory.length; j++){
+              this.file.createDir(this.file.externalRootDirectory+'PlantData/'+this.selectedPlant.plant_name+ '/'+this.selectedPlant.assessments[this.currentProject_id].assessment_name+'/' + this.folderStructure[l].categoryName + '/', this.folderStructure[l].subCategory[j].name, false).then(success=>{
+                for(var i=0; i<this.folderStructure.length; i++){
+                  for(var j=0; j<this.folderStructure[i].subCategory.length; j++){
+                    for(var k=0; k<this.folderStructure[i].subCategory[j].subCategory.length; k++){
+                      console.log(this.file.externalRootDirectory+'PlantData/'+this.selectedPlant.plant_name+ '/'+this.selectedPlant.assessments[this.currentProject_id].assessment_name+'/' + this.folderStructure[i].categoryName + '/' + this.folderStructure[i].subCategory[j].name + '/', this.folderStructure[i].subCategory[j].subCategory[k])
+                    this.file.createDir(this.file.externalRootDirectory+'PlantData/'+this.selectedPlant.plant_name+ '/'+this.selectedPlant.assessments[this.currentProject_id].assessment_name+'/' + this.folderStructure[i].categoryName + '/' + this.folderStructure[i].subCategory[j].name + '/', this.folderStructure[i].subCategory[j].subCategory[k], false).then(success=>{
+                      console.log('done')
+                    }, error =>{
+                      console.log('Second subcategory initialisation failed.');
+                    })
+                  }
+                  }
+                }
+              }, error=>{
+                console.log('First subcategory initialisation failed.');
+              })
+            }
+        }
+      }, error =>{
+        console.log('Main initialisation failed.');
+      })
+   }
+   loading.dismiss();
   }
 
   public getSubcategories(category_id){
@@ -268,25 +318,25 @@ export class NewAssessmentPage {
     // Get the data of an image
     this.camera.getPicture(options).then((imagePath) => {
       // Special handling for Android library
+      
       if (this.platform.is('android') && sourceType === this.camera.PictureSourceType.PHOTOLIBRARY) {
         this.filePath.resolveNativePath(imagePath)
           .then(filePath => {
             this.correctPath = filePath.substr(0, filePath.lastIndexOf('/') + 1);
             this.currentName = imagePath.substring(imagePath.lastIndexOf('/') + 1, imagePath.lastIndexOf('?'));
-            this.copyFileToLocalDir(this.correctPath, this.currentName, this.createFileName());
+            this.fullPath = this.correctPath+this.currentName;
           }); 
       } else {
         this.currentName = imagePath.substr(imagePath.lastIndexOf('/') + 1);
         this.correctPath = imagePath.substr(0, imagePath.lastIndexOf('/') + 1);
-        this.copyFileToLocalDir(this.correctPath, this.currentName, this.createFileName());
+        this.fullPath = this.correctPath+this.currentName;
       }
     }, (err) => {
       this.presentToast('Error while selecting image.');
     });
   }
 
-  // Create a new name for the image
-  public createFileName() {
+  private createFileName() {
     var d = new Date(),
     n = d.getTime(),
     newFileName =  n + ".jpg";
@@ -295,16 +345,38 @@ export class NewAssessmentPage {
   
   // Copy the image to a local folder
   private copyFileToLocalDir(namePath, currentName, newFileName) {
-    // this.file.createDir(this.file.externalRootDirectory,'PlantData', true).then(success =>{
-    //   this.presentToast('Directory Created.');
-    // }, error => {
-    //   this.presentToast('Directory not Created.');
-    // })
-    this.file.copyFile(namePath, currentName, this.file.externalRootDirectory+'PlantData', newFileName).then(success => {
-      this.lastImage = newFileName;
-    }, error => {
-      this.presentToast('Error while storing file.');
-    });
+    console.log(namePath)
+    console.log(currentName)
+    console.log(newFileName)
+    console.log(this.category)
+    console.log(this.subCategory)
+    console.log(this.subCategory1)
+    console.log(this.file.externalRootDirectory+'PlantData/'+this.selectedPlant.plant_name+ '/'+this.selectedPlant.assessments[this.currentProject_id].assessment_name+'/'+ this.folderStructure[this.category].categoryName+'/'+ this.folderStructure[this.category].subCategory[this.subCategory].name + '/' + this.subCategory1)
+
+    if(this.category && !this.subCategory && !this.subCategory1){
+      this.file.copyFile(namePath, currentName, this.file.externalRootDirectory+'Plantdata/'+ this.folderStructure[this.category].categoryName, newFileName + '.jpg').then(success => {
+        this.lastImage = newFileName + '.jpg';
+      }, error => {
+        this.presentToast('Error while storing file.');
+      });
+    }
+    else if(this.category && this.subCategory && !this.subCategory1){
+      this.file.copyFile(namePath, currentName, this.file.externalRootDirectory+'PlantData/'+this.selectedPlant.plant_name+ '/'+this.selectedPlant.assessments[this.currentProject_id].assessment_name+'/'+ this.folderStructure[this.category].categoryName+'/'+ this.folderStructure[this.category].subCategory[this.subCategory].name + '/' , this.fileName + '.jpg').then(success => {
+        this.lastImage = this.fileName + '.jpg';
+      }, error => {
+        this.presentToast('Error while storing file.');
+      });
+    }
+    else if(this.category && this.subCategory && this.subCategory1){
+      this.file.copyFile(namePath, currentName, this.file.externalRootDirectory+'PlantData/'+this.selectedPlant.plant_name+ '/'+this.selectedPlant.assessments[this.currentProject_id].assessment_name+'/'+ this.folderStructure[this.category].categoryName+'/'+ this.folderStructure[this.category].subCategory[this.subCategory].name + '/' + this.subCategory1, this.fileName + '.jpg').then(success => {
+        this.lastImage = this.fileName + '.jpg';
+      }, error => {
+        this.presentToast('Error while storing file.');
+      });
+    }
+
+    
+
   }
   
   private presentToast(text) {
@@ -316,28 +388,32 @@ export class NewAssessmentPage {
     toast.present();
   }
   
-  // Always get the accurate path to your apps folder
-  public pathForImage(img) {
-    if (img === null) {
-      return '';
-    } else {
-      return this.file.externalRootDirectory+'Plantdata/' + img;
-    }
+// Always get the accurate path to your apps folder
+public pathForImage(img) {
+  if (img === null) {
+    return '';
+  } else {
+    return cordova.file.dataDirectory + img;
   }
+}
   goBack(){
     this.navCtrl.pop();
   }
   uploadData(){
-    if(!this.fileName || !this.category || !this.subCategory || !this.lastImage){
+    if(!this.fileName || !this.category || !this.subCategory || !this.fullPath){
       this.presentToast('Please fill all required fields.')
     }
     else{
+    this.copyFileToLocalDir(this.correctPath, this.currentName, this.createFileName());
     this.presentToast('File uploaded successfully.');
     delete this.fileName
     delete this.category 
     delete this.subCategory
-    delete this.description
+    delete this.subCategory1
     delete this.lastImage
+    this.folderSubCategory = []
+    this.folderSubCategorySub = []
+    delete this.fullPath
     }
   }
 

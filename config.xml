@@ -86,4 +86,5 @@
   <plugin name="cordova-plugin-file-transfer" spec="~1.7.0"/>
   <plugin name="cordova-plugin-filepath" spec="~1.0.2"/>
   <icon src="resources\android\icon\drawable-xhdpi-icon.png"/>
+  <allow-navigation href="http://3.251.102.20:8100"/>
 </widget>

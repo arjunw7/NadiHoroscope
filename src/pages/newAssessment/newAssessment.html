@@ -7,12 +7,14 @@
         <div class="plantAddress">
             {{selectedPlant.plant_address}}
         </div>
-
+        <div class="projectName">
+            Project: {{currentProjectName}}
+        </div>
         <div class="newAssButtons">
             <button (click)="presentActionSheet()">Select File</button>
         </div>
-        <div class="capturedImage">
-            <img src="{{pathForImage(lastImage)}}" style="width:100%" [hidden]="lastImage === null">
+        <div class="capturedImage" *ngIf="fullPath">
+            <img src="{{fullPath}}" style="width:100%">
             <!-- <img [src]="base64Image" *ngIf="base64Image" /> {{selectedFile}} -->
         </div>
         <label>File name</label><br>
@@ -32,9 +34,6 @@
         <select [(ngModel)]="subCategory1" *ngIf="folderSubCategorySub[0]">
             <option *ngFor="let item of folderSubCategorySub" value="{{item}}">{{item}}</option>
         </select><br *ngIf="folderSubCategorySub[0]">
-        <label>Description</label><br>
-        <input [(ngModel)]="description" type="text">
-        <br>
         <div (click)="uploadData()" class="newAssessmentSubmit">
             <button>Upload</button>
         </div>

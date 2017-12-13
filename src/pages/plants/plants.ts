@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
-
+import { File } from '@ionic-native/file';
 import { PouchService } from '../../services/pouchService';
 import { AssessmentsPage } from '../assessments/assessments';
 
@@ -12,7 +12,7 @@ export class PlantsPage {
   allData:any;
   dbInit:any = {
       "_id": "212601219",
-      "plants":[
+      "plants":[ 
         {
           "id":1, 
           "plant_name": "Satpura Thermal Power Station", 
@@ -43,11 +43,32 @@ export class PlantsPage {
     }
   plantsList:any;
   plant_id:any;
-  constructor(public navCtrl: NavController, public pouchService: PouchService, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, private file: File, public pouchService: PouchService, public toastCtrl: ToastController) {
     this.pouchService.updatePlants(this.dbInit)
     this.pouchService.getData().then((data) => {
       this.plantsList = data[0].plants;
+      this.createPlantDirectories(this.plantsList)
     });
+  }
+
+  createPlantDirectories(plantsList){
+    this.file.createDir(this.file.externalRootDirectory,'PlantData', false).then(success =>{
+      for(var i = 0; i < this.plantsList.length; i++){
+        this.file.createDir(this.file.externalRootDirectory+'PlantData/',this.plantsList[i].plant_name, false).then(success =>{
+         console.log("Plants Directories initialised.")
+        }, error => {
+          console.log('Plants Directories initialisation falied.');
+        })
+     }
+    }, error => {
+      for(var i = 0; i < this.plantsList.length; i++){
+        this.file.createDir(this.file.externalRootDirectory+'PlantData/',this.plantsList[i].plant_name, false).then(success =>{
+         console.log("Plants Directories initialised.")
+        }, error => {
+          console.log('Plants Directories initialisation falied.');
+        })
+     }
+    })
   }
 
   showAssessmentsPage(id){
@@ -60,6 +81,7 @@ export class PlantsPage {
       })
     }
   }
+  
   private presentToast(text) {
     let toast = this.toastCtrl.create({
       message: text,

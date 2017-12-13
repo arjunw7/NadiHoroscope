@@ -12,7 +12,7 @@ export class PouchService {
  
     this.db = new PouchDB('powerdb');
  
-    this.remote = 'http://localhost:5984/powerdb';
+    this.remote = 'https://couchdb-3c74a1.smileupps.com/_utils/database.html?powerdb';
  
     let options = {
       live: true,

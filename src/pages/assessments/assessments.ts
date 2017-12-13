@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController, ToastController} from 'ionic-angular';
-
+import { File } from '@ionic-native/file';
 import { NewAssessmentPage } from '../newAssessment/newAssessment';
 import { HomePage } from '../home/home';
 import { PouchService } from '../../services/pouchService';
@@ -17,9 +17,9 @@ export class AssessmentsPage {
   newAssessment: any;
   selectedPlantIndex: any;
   allData: any;
-  newAssessmentID: any;
+  newAssessmentID: any; 
   assessment_id: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public pouchService: PouchService, public alertCtrl: AlertController, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, private file: File, public navParams: NavParams, public pouchService: PouchService, public alertCtrl: AlertController, public toastCtrl: ToastController) {
     this.selectedPlantId= navParams.get('plant_id');
     this.pouchService.getData().then((data) => {
       this.allData = data;
@@ -28,10 +28,22 @@ export class AssessmentsPage {
         if(this.plantsList[i].id==this.selectedPlantId){
           this.selectedPlant = this.plantsList[i]
           this.selectedPlantIndex = i
+          this.createProjectsDirectory(this.selectedPlant)
         }
       }
       this.assessmentList=this.selectedPlant.assessments;
+
     });
+  }
+
+  createProjectsDirectory(selectedPlant){
+    for(var j = 0; j < this.selectedPlant.assessments.length; j++){
+      this.file.createDir(this.file.externalRootDirectory+'PlantData/'+this.selectedPlant.plant_name+'/',this.selectedPlant.assessments[j].assessment_name, false).then(success =>{
+       console.log("Projects directories initialised.")
+      }, error => {
+        console.log('Projects directories initialisation falied.');
+      })
+   }
   }
   
   newAssessmentsPage(){
@@ -40,10 +52,12 @@ export class AssessmentsPage {
     }
     else{
     this.navCtrl.push(HomePage, {
-      currentPlant: this.selectedPlant
+      currentPlant: this.selectedPlant,
+      currentProject: this.assessment_id
     }) 
   } 
   }
+
   createNewAssessment(){
     let prompt = this.alertCtrl.create({
       title: 'New project',
@@ -56,12 +70,7 @@ export class AssessmentsPage {
         {
           name: 'sso',
           placeholder:"SSO"
-        },
-        {
-          name: 'date',
-          placeholder:'Date'
         }
-
       ],
       buttons: [
         {
@@ -70,7 +79,8 @@ export class AssessmentsPage {
         {
           text: 'Save',
           handler: data => {
-            this.addAssessment({assessment_name: data.title, assessment_date: data.date, user_name: data.sso});
+            this.addAssessment({assessment_name: data.title, assessment_date: 'NA', user_name: data.sso});
+            this.createProjectsDirectory(this.selectedPlant)
           }
         }
       ]
