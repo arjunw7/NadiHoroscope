@@ -25702,15 +25702,6 @@ body {
   font-family: geInspiraRegular;
 }
 
-ion-icon {
-  background-color: transparent;
-  position: absolute;
-  color: white;
-  left: 7%;
-  top: 2rem;
-  font-size: 2rem;
-}
-
 .projectName {
   padding: 0.5rem 10%;
   color: white;
@@ -25719,139 +25710,22 @@ ion-icon {
   text-align: left;
 }
 
-.plantName {
-  font-size: 2.5rem;
+.userName {
+  float: right;
   color: white;
-  font-weight: lighter;
-  padding: 5rem 10% 0.5rem 10%;
-  text-align: left;
-}
-
-.plantAddress {
   font-size: 1.7rem;
-  color: white;
-  font-weight: lighter;
-  padding: 0rem 10% 0.5rem 10%;
-  text-align: left;
+  padding: 2rem;
 }
 
-.assessmentTag {
-  font-size: 2.5rem;
-  color: white;
-  font-weight: lighter;
-  padding: 10rem 10% 1rem 10%;
-  text-align: center;
-}
-
-.assessmentTag2 {
-  font-size: 1.5rem;
-  color: white;
-  font-weight: lighter;
-  padding: 10rem 10% 1rem 10%;
-  text-align: center;
-}
-
-.assessmentPage select {
-  width: 80%;
-  font-size: 2rem;
-  padding: 1rem;
-  margin-top: 0rem;
-  background-color: transparent;
-  color: white;
-  border: none;
-  border-bottom: 1px solid;
-}
-
-.assessmentPage {
-  height: 100vh;
-  background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
-  background: linear-gradient(to bottom right, #17279a, #22bdd0);
-  text-align: center;
-}
-
-.assessmentPage button {
-  border-radius: 30px;
-  padding: 2rem 1rem;
-  background-color: #efefef;
-  width: 80%;
-  margin: 0% 10%;
-  font-size: 2rem;
-  margin-top: 2rem;
-  font-weight: lighter;
-  outline: none;
-  position: absolute;
-  bottom: 5rem;
-  left: 0;
-}
-
-.midOr {
-  color: white;
-  font-size: 1.9rem;
-  margin-top: 2rem;
-}
-
-.createNewButton button {
-  border-radius: 30px;
-  padding: 1.6rem 1rem !important;
-  background-color: transparent !important;
-  border: 2px solid white !important;
-  width: 80% !important;
-  color: white !important;
-  position: relative !important;
-  margin-top: 6rem !important;
-}
-
-.filesPage {
+.homePage {
   min-height: 100vh;
   background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
   background: linear-gradient(to bottom right, #17279a, #22bdd0);
   text-align: center;
 }
 
-.homePage {
-  height: 100vh;
-  background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
-  background: linear-gradient(to bottom right, #17279a, #22bdd0);
-}
-
-.logo {
-  padding: 5rem 0rem 2rem 0rem;
-  text-align: center;
-}
-
-.logo img {
-  width: 15rem;
-}
-
-.homeButtons {
-  position: absolute;
-  width: 100%;
-  bottom: 10rem;
-}
-
-.homeButtons button {
-  border-radius: 30px;
-  padding: 2rem 1rem;
-  background-color: #efefef;
-  width: 80%;
-  margin: 0% 10%;
-  font-size: 2rem;
-  margin-top: 2rem;
-  font-weight: lighter;
-  outline: none;
-}
-
-.footer {
-  color: white;
-  position: absolute;
-  height: 3rem;
-  width: 100%;
-  bottom: 0px;
-  text-align: center;
-}
-
-.newAssessmentPage select,
-.newAssessmentPage input {
+.homePage select,
+.homePage input {
   width: 80%;
   font-size: 2rem;
   padding: 0.8rem;
@@ -25862,14 +25736,7 @@ ion-icon {
   border-bottom: 1px solid;
 }
 
-.newAssessmentPage {
-  min-height: 100vh;
-  background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
-  background: linear-gradient(to bottom right, #17279a, #22bdd0);
-  text-align: center;
-}
-
-label {
+.homePage label {
   color: white;
   position: absolute;
   left: 10%;
@@ -25877,7 +25744,7 @@ label {
   font-size: 1.2rem;
 }
 
-.newAssessmentSubmit button {
+.homePage button {
   border-radius: 30px;
   padding: 2rem 1rem;
   background-color: #efefef;
@@ -25891,47 +25758,113 @@ label {
   margin-bottom: 2rem;
 }
 
-.newAssButtons {
-  margin-top: 2rem;
-}
-
-.newAssButtons button {
-  border-radius: 30px;
-  padding: 1.6rem 1rem !important;
-  background-color: transparent !important;
-  border: 2px solid white !important;
-  width: 80% !important;
-  color: white !important;
-  position: relative !important;
-  margin-top: 1rem !important;
-}
-
-.midText {
+.footer {
   color: white;
-  display: inline-block;
-  padding: 0rem 0.8rem;
-}
-
-.capturedImage {
-  padding: 2rem 10%;
-}
-
-.plantTag {
-  font-size: 2.5rem;
-  color: white;
-  font-weight: lighter;
-  padding: 6rem 0rem 1rem 0rem;
+  position: absolute;
+  height: 3rem;
+  width: 100%;
+  bottom: 0px;
   text-align: center;
 }
 
-.plantsPage {
-  height: 100vh;
+.pageName {
+  text-align: left;
+  font-size: 2rem;
+  color: white;
+  padding: 2em 0rem 1rem 3.5rem;
+}
+
+.inputPage {
+  min-height: 100vh;
   background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
   background: linear-gradient(to bottom right, #17279a, #22bdd0);
   text-align: center;
 }
 
-.plantsPage button {
+.field {
+  width: 30%;
+  display: inline-block;
+}
+
+.inputPage select,
+.inputPage input {
+  width: 90%;
+  font-size: 2rem;
+  padding: 0.8rem;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-bottom: 1px solid;
+  text-align: center;
+}
+
+.inputPage label {
+  color: white;
+  margin-top: 6rem;
+  font-size: 1.2rem;
+  float: left;
+  margin-left: 2rem;
+}
+
+.inputPage button {
+  border-radius: 30px;
+  padding: 2rem 1rem;
+  background-color: #efefef;
+  width: 80%;
+  margin: 0% 10%;
+  font-size: 2rem;
+  margin-top: 6rem;
+  font-weight: lighter;
+  outline: none;
+  left: 0;
+  margin-bottom: 2rem;
+}
+
+.footer {
+  color: white;
+  position: absolute;
+  height: 3rem;
+  width: 100%;
+  bottom: 0px;
+  text-align: center;
+}
+
+.pageName {
+  text-align: left;
+  font-size: 2rem;
+  color: white;
+  padding: 2em 0rem 1rem 3.5rem;
+}
+
+.allFields {
+  margin: 0 2rem;
+}
+
+.instructionsPage {
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
+  background: linear-gradient(to bottom right, #17279a, #22bdd0);
+  text-align: center;
+}
+
+.instructions {
+  color: white;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+.instructions li {
+  padding: 1rem;
+}
+
+.pageName {
+  text-align: left;
+  font-size: 2rem;
+  color: white;
+  padding: 2em 0rem 1rem 3.5rem;
+}
+
+.instructionsPage button {
   border-radius: 30px;
   padding: 2rem 1rem;
   background-color: #efefef;
@@ -25941,24 +25874,180 @@ label {
   margin-top: 2rem;
   font-weight: lighter;
   outline: none;
-  position: absolute;
-  bottom: 5rem;
   left: 0;
+  margin-bottom: 2rem;
 }
 
-.plantsPage select {
+.handImage {
+  text-align: left;
+  padding-top: 5rem;
+}
+
+.handImage img {
+  opacity: 0.7;
+  width: 90%;
+}
+
+.footer {
+  color: white;
+  position: absolute;
+  height: 3rem;
+  width: 100%;
+  bottom: 0px;
+  text-align: center;
+}
+
+.userName {
+  float: right;
+  color: white;
+  font-size: 1.7rem;
+  padding: 2rem;
+}
+
+.LandingPage {
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
+  background: linear-gradient(to bottom right, #17279a, #22bdd0);
+  text-align: center;
+}
+
+.LandingPage button {
+  border-radius: 30px;
+  position: absolute;
+  bottom: 5rem;
+  padding: 2rem 1rem;
+  background-color: #efefef;
   width: 80%;
+  margin: 0% 10%;
   font-size: 2rem;
-  padding: 1rem;
-  margin-top: 0rem;
+  margin-top: 2rem;
+  font-weight: lighter;
+  outline: none;
+  left: 0;
+  margin-bottom: 2rem;
+}
+
+.footer {
+  color: white;
+  position: absolute;
+  height: 3rem;
+  width: 100%;
+  bottom: 0px;
+  text-align: center;
+}
+
+.logo {
+  padding-top: 55%;
+}
+
+.logo img {
+  width: 20rem;
+}
+
+.resultPage {
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
+  background: linear-gradient(to bottom right, #17279a, #22bdd0);
+  text-align: center;
+}
+
+.resultPage button {
+  border-radius: 30px;
+  padding: 2rem 1rem;
+  background-color: #efefef;
+  width: 80%;
+  margin: 0% 10%;
+  font-size: 2rem;
+  margin-top: 2rem;
+  font-weight: lighter;
+  outline: none;
+  left: 0;
+  margin-bottom: 2rem;
+  position: absolute;
+  bottom: 5rem;
+}
+
+.footer {
+  color: white;
+  position: absolute;
+  height: 3rem;
+  width: 100%;
+  bottom: 0px;
+  text-align: center;
+}
+
+.pageName {
+  text-align: left;
+  font-size: 2rem;
+  color: white;
+  padding: 2em 0rem 1rem 3.5rem;
+}
+
+.score {
+  padding-top: 50%;
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.diagnosis {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.surveyPage {
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
+  background: linear-gradient(to bottom right, #17279a, #22bdd0);
+  text-align: center;
+}
+
+.surveyPage select,
+.surveyPage input {
+  width: 80%;
+  font-size: 1.3rem;
+  padding: 0rem 0.8rem 0.8rem 0.8rem;
   background-color: transparent;
   color: white;
   border: none;
   border-bottom: 1px solid;
 }
 
-.appName {
+.surveyPage label {
   color: white;
-  font-size: 2.5rem;
-  padding: 3rem 3rem 0rem 3rem;
+  padding-bottom: 1rem;
+  font-size: 1.2rem;
+  float: left;
+  margin-left: 4rem;
+  padding-top: 2rem;
+}
+
+.surveyPage button {
+  border-radius: 30px;
+  padding: 2rem 1rem;
+  background-color: #efefef;
+  width: 80%;
+  margin: 0% 10%;
+  font-size: 2rem;
+  margin-top: 2rem;
+  font-weight: lighter;
+  outline: none;
+  left: 0;
+  margin-bottom: 2rem;
+}
+
+.footer {
+  color: white;
+  position: absolute;
+  height: 3rem;
+  width: 100%;
+  bottom: 0px;
+  text-align: center;
+}
+
+.pageName {
+  text-align: left;
+  font-size: 2rem;
+  color: white;
+  padding: 2em 0rem 1rem 3.5rem;
 }

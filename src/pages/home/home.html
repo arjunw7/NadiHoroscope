@@ -1,23 +1,21 @@
 <ion-content>
-    <ion-icon (click)="goBack()" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
     <div class="homePage">
-        <div class="plantName">
-            {{currentPlant.plant_name}}
+        <div class="pageName">
+            Patient Details
         </div>
-        <div class="plantAddress">
-            {{currentPlant.plant_address}}
-        </div>
-        <div class="projectName">
-            Project: {{currentProjectName}}
-        </div>
-        <div class="homeButtons">
-            <button>Value Calculator</button>
-            <button (click)="showPlantsPage()">Assessment</button>
-            <button>Solution Configurator</button>
-            <button>Solution Stack</button>
-        </div>
-    </div>
-    <div class="footer">
-        © General Electric, 2017
+        <label>Name</label><br>
+        <input [(ngModel)]="patient.name" type="text"><br>
+        <label>Age</label><br>
+        <input [(ngModel)]="patient.age" type="number"><br>
+        <label>Height</label><br>
+        <input [(ngModel)]="patient.height" type="number"><br>
+        <label>Weight</label><br>
+        <input [(ngModel)]="patient.weight" type="number"><br>
+        <label>Gender</label><br>
+        <select [(ngModel)]="patient.gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select><br><br>
+        <button (click)="showInstructionsPage(patient)">Continue</button>
     </div>
 </ion-content>

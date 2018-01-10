@@ -1,0 +1,65 @@
+.inputPage {
+    min-height: 100vh;
+    background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
+    background: linear-gradient(to bottom right, #17279a, #22bdd0);
+    text-align: center;
+}
+
+.field {
+    width: 30%;
+    display: inline-block
+}
+
+.inputPage select,
+.inputPage input {
+    width: 90%;
+    font-size: 2rem;
+    padding: 0.8rem;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 1px solid;
+    text-align: center
+}
+
+.inputPage label {
+    color: white;
+    margin-top: 6rem;
+    font-size: 1.2rem;
+    float: left;
+    margin-left: 2rem;
+}
+
+.inputPage button {
+    border-radius: 30px;
+    padding: 2rem 1rem;
+    background-color: #efefef;
+    width: 80%;
+    margin: 0% 10%;
+    font-size: 2rem;
+    margin-top: 6rem;
+    font-weight: lighter;
+    outline: none;
+    left: 0;
+    margin-bottom: 2rem;
+}
+
+.footer {
+    color: white;
+    position: absolute;
+    height: 3rem;
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+}
+
+.pageName {
+    text-align: left;
+    font-size: 2rem;
+    color: white;
+    padding: 2em 0rem 1rem 3.5rem
+}
+
+.allFields {
+    margin: 0 2rem
+}

@@ -1,35 +1,37 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-
-import { PlantsPage } from '../plants/plants';
-import { FilesPage } from '../files/files';
-import { PouchService } from '../../services/pouchService';
-import { NewAssessmentPage } from '../newAssessment/newAssessment';
+import { NavController, NavParams, ToastController } from 'ionic-angular';
+import { InstructionsPage } from '../instructions/instructions';
 
 @Component({
   selector: 'home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  currentPlant:any;
-  currentProject:any;
-  currentProjectName:any;
-  constructor(public navCtrl: NavController,public navParams: NavParams, public pouchService: PouchService) {
-    this.currentPlant= navParams.get('currentPlant');
-    this.currentProject = navParams.get('currentProject')
-    this.currentProjectName = this.currentPlant.assessments[this.currentProject-1].assessment_name
-
+  patient = {
+    "name": "",
+    "age": "",
+    "height": "",
+    "weight": "",
+    "gender": ""
+  };
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
   }
-  showPlantsPage() {
-      this.navCtrl.push(NewAssessmentPage, {
-        currentPlant: this.currentPlant,
-        currentProject_id:this.currentProject
-      });
+  showInstructionsPage() {
+    if(!this.patient || !this.patient.name || !this.patient.age || !this.patient.height || !this.patient.weight || !this.patient.gender){
+      this.presentToast('Please enter all the fields.');
+    }
+    else
+    this.navCtrl.push(InstructionsPage, {
+      patient: this.patient
+    });
+    
   }
-  showFilesPage() {
-    this.navCtrl.push(FilesPage);
-  }
-  goBack(){
-    this.navCtrl.pop();
+  private presentToast(text) {
+    let toast = this.toastCtrl.create({
+    message: text,
+    duration: 3000,
+    position: 'top'
+    });
+    toast.present();
   }
 }

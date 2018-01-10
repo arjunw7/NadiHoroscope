@@ -1,0 +1,105 @@
+<ion-content>
+    <div class="surveyPage">
+        <div class="pageName" *ngIf="!noSolution">
+            Patient Details
+        </div>
+        <div *ngIf="formStatus1">
+            <label>Pain in abdomen?</label><br>
+            <select [(ngModel)]="form1.abdomenPain">
+                <option value="3">Yes</option>
+                <option value="0.5">No</option>
+            </select><br>
+            <label>Status after eating spicy food?</label><br>
+            <select [(ngModel)]="form1.spicy">
+                <option value="4">Pain increases</option>
+                <option value="0">No effect</option>
+            </select><br>
+            <label>Status after eating non-spicy food?</label><br>
+            <select [(ngModel)]="form1.nonSpicy">
+                <option value="3">Pain decreases</option>
+                <option value="0">Pain increases</option>
+            </select><br>
+            <label>History of heavy acidity?</label><br>
+            <select [(ngModel)]="form1.acidity">
+                <option value="2">Yes</option>
+                <option value="0">No</option>
+            </select><br>
+            <label>Any headaches?</label><br>
+            <select [(ngModel)]="form1.headache">
+                <option value="yes">Yes</option>
+                <option value="0">No</option>
+            </select><br>
+            <label *ngIf="form1.headache=='yes'">Does it follow vomiting?<br></label>
+            <select [(ngModel)]="form1.vomiting" *ngIf="form1.headache=='yes'">
+                <option value="yes">Yes</option>
+                <option value="0">No</option><br>
+            </select>
+            <label *ngIf="form1.vomiting=='yes'">Does headache gets relieved after vomiting?<br></label>
+            <select [(ngModel)]="form1.vomitRelief" *ngIf="form1.vomiting=='yes'">
+                <option value="3">Yes</option>
+                <option value="0">No</option><br>
+            </select>
+            <label>Blood in stool?</label><br>
+            <select [(ngModel)]="form1.bloodStool">
+                <option value="yes">Yes</option>
+                <option value="0">No</option>
+            </select><br>
+            <label *ngIf="form1.bloodStool=='yes'">Do you have piles?<br></label>
+            <select [(ngModel)]="form1.piles" *ngIf="form1.bloodStool=='yes'">
+                <option value="0">Yes</option>
+                <option value="5">No</option><br>
+            </select>
+            <br>
+            <button (click)="submitForm1()">Continue</button>
+        </div>
+        <div *ngIf="formStatus2">
+            <label>Do you have diabetes?</label><br>
+            <select [(ngModel)]="form2.diabetes">
+                    <option value="1">Yes</option>
+                    <option value="no">No</option>
+                </select><br>
+            <label *ngIf="form2.diabetes=='no'">Any family history of diabetes?<br></label>
+            <select [(ngModel)]="form2.diabetesFamily" *ngIf="form2.diabetes=='no'">
+                    <option value="0.5">Yes</option>
+                    <option value="3">No</option><br>
+                </select>
+            <label>Do you have stomach ache?</label><br>
+            <select [(ngModel)]="form2.stomache">
+                    <option value="3">Yes</option>
+                    <option value="0">No</option>
+                </select><br>
+            <label>Acidic burps?</label><br>
+            <select [(ngModel)]="form2.burps">
+                    <option value="2">Yes</option>
+                    <option value="0.5">No</option>
+                </select><br>
+            <label>Vomiting after eating spicy food?<br></label>
+            <select [(ngModel)]="form2.vomit">
+                    <option value="yes">Yes</option>
+                    <option value="1.5">No</option><br>
+                </select>
+            <label *ngIf="form2.vomit=='yes'">How much time does it take?<br></label>
+            <select [(ngModel)]="form2.vomitTime" *ngIf="form2.vomit=='yes'">
+                    <option value="4">Within 10 minutes</option>
+                    <option value="3">about 45 minutes</option><br>
+                </select>
+            <button (click)="submitForm2()">Continue</button>
+        </div>
+        <div *ngIf="formStatus3">
+            <label>Problem in swallowing food or water?</label><br>
+            <select [(ngModel)]="form3.swallow">
+                        <option value="yes">Yes</option>
+                        <option value="0">No</option>
+                    </select><br>
+            <label *ngIf="form3.swallow=='yes'">Burning sensation in which part?<br></label>
+            <select [(ngModel)]="form3.part" *ngIf="form3.swallow=='yes'">
+                        <option value="2">Mouth</option>
+                        <option value="3">Inside neck</option><br>
+                    </select>
+            <button (click)="submitForm3()">Continue</button>
+        </div>
+    </div>
+    <!-- <div class="footer">
+        © Nadi horoscope, 2017
+    </div> -->
+</ion-content>

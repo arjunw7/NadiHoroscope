@@ -1,0 +1,46 @@
+<ion-content>
+    <div class="inputPage">
+        <div class="pageName">
+            Enter all values
+        </div>
+        <div class="allFields">
+            <div class="field">
+                <label>Vatta-Vatta</label><br>
+                <input [(ngModel)]="inputs.vatta_vatta" type="number"><br>
+            </div>
+            <div class="field">
+                <label>Vatta-Pitta</label>
+                <input [(ngModel)]="inputs.vatta_pitta" type="number"><br>
+            </div>
+            <div class="field">
+                <label>Vatta-Kapha</label><br>
+                <input [(ngModel)]="inputs.vatta_kapha" type="number"><br>
+            </div>
+            <div class="field">
+                <label>Pitta-Vatta</label><br>
+                <input [(ngModel)]="inputs.pitta_vatta" type="number"><br>
+            </div>
+            <div class="field">
+                <label>Pitta-Pitta</label><br>
+                <input [(ngModel)]="inputs.pitta_pitta" type="number"><br>
+            </div>
+            <div class="field">
+                <label>Pitta-Kapha</label><br>
+                <input [(ngModel)]="inputs.pitta_kapha" type="number"><br>
+            </div>
+            <div class="field">
+                <label>Kapha-Vatta</label><br>
+                <input [(ngModel)]="inputs.kapha_vatta" type="number"><br>
+            </div>
+            <div class="field">
+                <label>Kapha-Pitta</label><br>
+                <input [(ngModel)]="inputs.kapha_pitta" type="number"><br>
+            </div>
+            <div class="field">
+                <label>Kapha-Kapha</label><br>
+                <input [(ngModel)]="inputs.kapha_kapha" type="number"><br>
+            </div>
+        </div>
+        <button (click)="showSurveyPage(inputData)">Continue</button>
+    </div>
+</ion-content>

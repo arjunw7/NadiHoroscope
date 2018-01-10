@@ -1,0 +1,17 @@
+<ion-content>
+    <div class="resultPage">
+        <div class="score" *ngIf="score!=-1">
+            Score - {{score}}/{{maxScore}}
+        </div>
+        <div class="score" *ngIf="score==-1">
+            Congratulations!
+        </div>
+        <div class="diagnosis">
+            {{status}}
+        </div><br><br><br><br><br><br><br><br>
+        <button (click)="returnHome()">Home</button>
+    </div>
+    <div class="footer">
+        © Nadi horoscope, 2017
+    </div>
+</ion-content>

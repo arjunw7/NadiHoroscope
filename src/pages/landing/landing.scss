@@ -1,0 +1,39 @@
+.LandingPage {
+    min-height: 100vh;
+    background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
+    background: linear-gradient(to bottom right, #17279a, #22bdd0);
+    text-align: center;
+}
+
+.LandingPage button {
+    border-radius: 30px;
+    position: absolute;
+    bottom: 5rem;
+    padding: 2rem 1rem;
+    background-color: #efefef;
+    width: 80%;
+    margin: 0% 10%;
+    font-size: 2rem;
+    margin-top: 2rem;
+    font-weight: lighter;
+    outline: none;
+    left: 0;
+    margin-bottom: 2rem
+}
+
+.footer {
+    color: white;
+    position: absolute;
+    height: 3rem;
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+}
+
+.logo {
+    padding-top: 55%
+}
+
+.logo img {
+    width: 20rem;
+}

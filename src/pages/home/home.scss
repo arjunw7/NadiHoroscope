@@ -1,24 +1,31 @@
 .homePage {
-    height: 100vh;
+    min-height: 100vh;
+    background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
     background: linear-gradient(to bottom right, #17279a, #22bdd0);
-}
-
-.logo {
-    padding: 5rem 0rem 2rem 0rem;
     text-align: center;
 }
 
-.logo img {
-    width: 15rem;
+.homePage select,
+.homePage input {
+    width: 80%;
+    font-size: 2rem;
+    padding: 0.8rem;
+    margin-top: 1.6rem;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 1px solid;
 }
 
-.homeButtons {
+.homePage label {
+    color: white;
     position: absolute;
-    width: 100%;
-    bottom: 10rem;
+    left: 10%;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
 }
 
-.homeButtons button {
+.homePage button {
     border-radius: 30px;
     padding: 2rem 1rem;
     background-color: #efefef;
@@ -28,6 +35,8 @@
     margin-top: 2rem;
     font-weight: lighter;
     outline: none;
+    left: 0;
+    margin-bottom: 2rem
 }
 
 .footer {
@@ -37,4 +46,11 @@
     width: 100%;
     bottom: 0px;
     text-align: center;
+}
+
+.pageName {
+    text-align: left;
+    font-size: 2rem;
+    color: white;
+    padding: 2em 0rem 1rem 3.5rem
 }

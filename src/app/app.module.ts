@@ -3,31 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { LandingPage } from '../pages/landing/landing'
 import { HomePage } from '../pages/home/home';
-import { PlantsPage } from '../pages/plants/plants';
-import { AssessmentsPage } from '../pages/assessments/assessments';
-import { NewAssessmentPage } from '../pages/newAssessment/newAssessment';
-import { FilesPage } from '../pages/files/files';
-
-import { PouchService } from '../services/pouchService';
+import { InstructionsPage } from '../pages/instructions/instructions';
+import { InputPage } from '../pages/input/input';
+import { SurveyPage } from '../pages/survey/survey';
+import { ResultPage } from '../pages/result/result';
 
 import { FormsModule } from '@angular/forms';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { File } from '@ionic-native/file';
-import { Transfer } from '@ionic-native/transfer';
-import { Camera } from '@ionic-native/camera';
-import { FilePath } from '@ionic-native/file-path';
-import { FileChooser } from '@ionic-native/file-chooser';
 
 @NgModule({
   declarations: [
     MyApp,
+    LandingPage,
     HomePage,
-    PlantsPage,
-    AssessmentsPage,
-    NewAssessmentPage,
-    FilesPage
+    InstructionsPage,
+    InputPage,
+    SurveyPage,
+    ResultPage
   ], 
   imports: [
     BrowserModule,
@@ -37,21 +32,16 @@ import { FileChooser } from '@ionic-native/file-chooser';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    LandingPage,
     HomePage,
-    PlantsPage,
-    AssessmentsPage,
-    NewAssessmentPage,
-    FilesPage
+    InstructionsPage,
+    InputPage,
+    SurveyPage,
+    ResultPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    PouchService,
-    Transfer,
-    Camera,
-    FilePath,
-    File,
-    FileChooser,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
