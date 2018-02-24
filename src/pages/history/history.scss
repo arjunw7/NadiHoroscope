@@ -1,0 +1,49 @@
+.HistoryPage {
+    min-height: 100vh;
+    background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
+    background: linear-gradient(to bottom right, #17279a, #22bdd0);
+    text-align: center;
+}
+
+.HistoryPage button {
+    border-radius: 30px;
+    padding: 2rem 1rem;
+    background-color: #efefef;
+    width: 80%;
+    margin: 0% 10%;
+    font-size: 2rem;
+    margin-top: 3rem;
+    font-weight: lighter;
+    outline: none;
+    left: 0;
+}
+
+.readingItem {
+    text-align: left;
+    margin: 0 10%;
+    color: white;
+    padding: 1rem;
+    border-bottom: 1px solid white
+}
+
+.footer {
+    color: white;
+    position: absolute;
+    height: 3rem;
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+}
+
+.logo {
+    padding-top: 55%
+}
+
+.logo img {
+    width: 20rem;
+}
+
+.tagline {
+    color: white;
+    font-size: 2rem
+}

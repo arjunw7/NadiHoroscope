@@ -1,0 +1,21 @@
+<ion-content>
+    <div class="HistoryPage">
+        <div class="pageName">
+            Recent Tests
+        </div>
+        <div class="allReadings">
+            <div class="readingItem" (click)="openItem(item)" *ngFor="let item of allData">
+                <div class="pname">
+                    Patient Name - {{item.patientName}}
+                </div>
+                <div class="pscore">
+                    Score - {{item.score}}
+                </div>
+                <div class="pdignosis">
+                    Result - {{item.dignosis}}
+                </div>
+            </div>
+        </div>
+        <button (click)="showHomePage()">Home</button>
+    </div>
+</ion-content>

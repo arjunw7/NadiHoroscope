@@ -25717,6 +25717,106 @@ body {
   padding: 2rem;
 }
 
+.HistoryPage {
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
+  background: linear-gradient(to bottom right, #17279a, #22bdd0);
+  text-align: center;
+}
+
+.HistoryPage button {
+  border-radius: 30px;
+  padding: 2rem 1rem;
+  background-color: #efefef;
+  width: 80%;
+  margin: 0% 10%;
+  font-size: 2rem;
+  margin-top: 3rem;
+  font-weight: lighter;
+  outline: none;
+  left: 0;
+}
+
+.readingItem {
+  text-align: left;
+  margin: 0 10%;
+  color: white;
+  padding: 1rem;
+  border-bottom: 1px solid white;
+}
+
+.footer {
+  color: white;
+  position: absolute;
+  height: 3rem;
+  width: 100%;
+  bottom: 0px;
+  text-align: center;
+}
+
+.logo {
+  padding-top: 55%;
+}
+
+.logo img {
+  width: 20rem;
+}
+
+.tagline {
+  color: white;
+  font-size: 2rem;
+}
+
+.HistoryPage {
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
+  background: linear-gradient(to bottom right, #17279a, #22bdd0);
+  text-align: center;
+}
+
+.HistoryPage button {
+  border-radius: 30px;
+  padding: 2rem 1rem;
+  background-color: #efefef;
+  width: 80%;
+  margin: 0% 10%;
+  font-size: 2rem;
+  margin-top: 3rem;
+  font-weight: lighter;
+  outline: none;
+  left: 0;
+}
+
+.readingItem {
+  text-align: left;
+  margin: 0 10%;
+  color: white;
+  padding: 1rem;
+  border-bottom: 1px solid white;
+}
+
+.footer {
+  color: white;
+  position: absolute;
+  height: 3rem;
+  width: 100%;
+  bottom: 0px;
+  text-align: center;
+}
+
+.logo {
+  padding-top: 55%;
+}
+
+.logo img {
+  width: 20rem;
+}
+
+.tagline {
+  color: white;
+  font-size: 2rem;
+}
+
 .homePage {
   min-height: 100vh;
   background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
@@ -25756,6 +25856,8 @@ body {
   outline: none;
   left: 0;
   margin-bottom: 2rem;
+  position: absolute;
+  top: 50rem;
 }
 
 .footer {
@@ -25803,7 +25905,7 @@ body {
   margin-top: 6rem;
   font-size: 1.2rem;
   float: left;
-  margin-left: 2rem;
+  margin-left: 0.5rem;
 }
 
 .inputPage button {
@@ -25841,7 +25943,7 @@ body {
 }
 
 .instructionsPage {
-  min-height: 100vh;
+  height: 100vh;
   background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
   background: linear-gradient(to bottom right, #17279a, #22bdd0);
   text-align: center;
@@ -25854,7 +25956,7 @@ body {
 }
 
 .instructions li {
-  padding: 1rem;
+  padding: 0.7rem;
 }
 
 .pageName {
@@ -25875,15 +25977,26 @@ body {
   font-weight: lighter;
   outline: none;
   left: 0;
-  margin-bottom: 2rem;
+  position: absolute;
+  bottom: 3rem;
 }
 
 .handImage {
   text-align: left;
-  padding-top: 5rem;
+  padding-top: 3rem;
 }
 
 .handImage img {
+  opacity: 0.7;
+  width: 90%;
+}
+
+.handImage1 {
+  text-align: right;
+  padding-top: 3rem;
+}
+
+.handImage1 img {
   opacity: 0.7;
   width: 90%;
 }
@@ -25913,18 +26026,15 @@ body {
 
 .LandingPage button {
   border-radius: 30px;
-  position: absolute;
-  bottom: 5rem;
   padding: 2rem 1rem;
   background-color: #efefef;
   width: 80%;
   margin: 0% 10%;
   font-size: 2rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
   font-weight: lighter;
   outline: none;
   left: 0;
-  margin-bottom: 2rem;
 }
 
 .footer {
@@ -25942,6 +26052,11 @@ body {
 
 .logo img {
   width: 20rem;
+}
+
+.tagline {
+  color: white;
+  font-size: 2rem;
 }
 
 .resultPage {
@@ -25984,7 +26099,7 @@ body {
 }
 
 .score {
-  padding-top: 50%;
+  padding-top: 10%;
   color: white;
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -25993,6 +26108,13 @@ body {
 .diagnosis {
   color: white;
   font-size: 1.5rem;
+  margin: 0 10%;
+}
+
+.points {
+  color: white;
+  text-align: left;
+  margin: 0 10%;
 }
 
 .surveyPage {

@@ -1,14 +1,74 @@
 <ion-content>
     <div class="resultPage">
-        <div class="score" *ngIf="score!=-1">
-            Score - {{score}}/{{maxScore}}
+        <div class="score" *ngIf="score!='NA'">
+            Score - {{score}}/{{maxScore}}<br> {{bodyWeight}}
         </div>
-        <div class="score" *ngIf="score==-1">
+        <div class="score" *ngIf="score=='NA'">
             Congratulations!
         </div>
         <div class="diagnosis">
             {{status}}
-        </div><br><br><br><br><br><br><br><br>
+        </div>
+        <div class="points" *ngIf="status=='In future you may have ulcer, take necessary precautions'">
+            <b>Food</b><br> What to eat:<br>
+            <i>
+                1. Fruits<br>
+                2. Eat light lunch and dinner.<br>
+                3. Avoid consumption of starch(wheat, rice).<br>
+            </i> What not to eat:<br>
+            <i>
+                1. Fermented food(bread, yoghurt)
+                2. Chilled water.
+                3. Tea, coffee, sweets.
+                4. Spicy food.
+            </i>
+            <b>Lifestyle</b><br>
+            <i>
+                1. Do not stay awake late at night<br>
+                2. Drink luke warm water as soon as you get up in morning.<br>
+                3. Morning walk will help.<br>
+                4. Avoid Painkillers.<br>
+            </i>
+            <b>Yoga</b><br>
+            <i>
+                1. Anulom Vilom<br>
+                2. Shitali Pranayam.<br>
+                3. Agnisar Kriya.<br>
+                4. Bhyangasan.<br>
+                5. Savasan<br>
+                &nbsp;&nbsp;Do pranayam and asana slowly without exerting pressure and hurting yourself.
+            </i>
+        </div>
+        <div class="points" *ngIf="status=='In future you may have ulcer (Avoid spicy food)'">
+            <b>Food</b><br> What to eat:<br>
+            <i>
+                    1. Fruits<br>
+                    2. Eat light lunch and dinner.<br>
+                    3. Avoid consumption of starch(wheat, rice).<br>
+                </i> What not to eat:<br>
+            <i>
+                    1. Fermented food(bread, yoghurt)
+                    2. Chilled water.
+                    3. Tea, coffee, sweets.
+                    4. Spicy food.
+                </i>
+            <b>Lifestyle</b><br>
+            <i>
+                    1. Do not stay awake late at night<br>
+                    2. Drink luke warm water as soon as you get up in morning.<br>
+                    3. Morning walk will help.<br>
+                    4. Avoid Painkillers.<br>
+                </i>
+            <b>Yoga</b><br>
+            <i>
+                    1. Anulom Vilom<br>
+                    2. Shitali Pranayam.<br>
+                    3. Agnisar Kriya.<br>
+                    4. Bhyangasan.<br>
+                    5. Savasan<br>
+                    &nbsp;&nbsp;Do pranayam and asana slowly without exerting pressure and hurting yourself.
+                </i>
+        </div>
         <button (click)="returnHome()">Home</button>
     </div>
     <div class="footer">

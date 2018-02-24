@@ -38,9 +38,11 @@ export class SurveyPage {
     "swallow": "",
     "part": ""
   }
+  inputData1:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
     this.patient = navParams.get('patient');
     this.inputData = navParams.get('inputData');
+    this.inputData1 = navParams.get('inputData');
     for(var i=0; i<this.inputData.length-1; i++){
       for(var j=0; j<this.inputData.length-i-1; j++){
         if(this.inputData[j].value<this.inputData[j+1].value){
@@ -51,7 +53,7 @@ export class SurveyPage {
       }
     }
     if(this.check456(this.inputData)){
-      if(this.inputData[0].id==4 && this.inputData[1].id==2){
+      if((this.inputData[0].id==4 && this.inputData[1].id==2) || (this.inputData[0].id==2 && this.inputData[1].id==4)){
         this.formStatus1 = true;
         this.noSolution = false;
       }
@@ -59,7 +61,7 @@ export class SurveyPage {
         this.formStatus2 = true;
         this.noSolution = false;
       }
-      else if(this.inputData[0].id==6 && this.inputData[1].id==5){
+      else if((this.inputData[0].id==6 && this.inputData[1].id==5) || (this.inputData[0].id==5 && this.inputData[1].id==6)){
         this.formStatus3 = true;
         this.noSolution = false;
       }
@@ -67,9 +69,11 @@ export class SurveyPage {
     }
     else {
       this.navCtrl.push(ResultPage,{
-        score: -1,
-        maxScore: 20,
-        status: "No signs of ulcer."
+        score: "NA",
+        maxScore: "NA",
+        status: "No signs of ulcer.",
+        patient: this.patient,
+        inputData:this.inputData1
       })
     }
   }
@@ -101,7 +105,9 @@ export class SurveyPage {
           this.navCtrl.push(ResultPage,{
             score: this.ftotal,
             maxScore: 20,
-            status: this.fstatus
+            status: this.fstatus,
+            patient: this.patient,
+            inputData:this.inputData1
           })
         }
       }
@@ -151,13 +157,16 @@ export class SurveyPage {
   resultForm2(total){
     var status =""
     if(total<=2) status = "No Ulcer"
-    else if(total>2 && total<=5) status = "In future you may have ulcer (Avoid spicy food)"
+    else if(total>2 && total<=5 && total!=2.5) status = "In future you may have ulcer (Avoid spicy food)"
+    else if(total==2.5) status = "Get your diabetes checked"
     else if(total>5 && total<=9) status = "Ulcer in initial stages"
     else if(total>9) status = "Very high chances ulcer"
     this.navCtrl.push(ResultPage,{
       score: total,
       maxScore: 12,
-      status: status
+      status: status,
+      patient: this.patient,
+      inputData:this.inputData1
     })
   }
 
@@ -186,7 +195,9 @@ export class SurveyPage {
     this.navCtrl.push(ResultPage,{
       score: total,
       maxScore: 3,
-      status: status
+      status: status,
+      patient: this.patient,
+      inputData:this.inputData1
     })
   }
   private check456(obj) {

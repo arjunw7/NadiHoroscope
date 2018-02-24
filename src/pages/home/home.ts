@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { InstructionsPage } from '../instructions/instructions';
+import { PouchService } from '../../services/pouchService';
 
 @Component({
   selector: 'home',
@@ -14,6 +15,7 @@ export class HomePage {
     "weight": "",
     "gender": ""
   };
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
   }
   showInstructionsPage() {

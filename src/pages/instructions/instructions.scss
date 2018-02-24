@@ -1,5 +1,5 @@
 .instructionsPage {
-    min-height: 100vh;
+    height: 100vh;
     background: -webkit-gradient(linear, left top, right bottom, from(#17279a), to(#22bdd0));
     background: linear-gradient(to bottom right, #17279a, #22bdd0);
     text-align: center;
@@ -8,18 +8,18 @@
 .instructions {
     color: white;
     font-size: 1.5rem;
-    text-align: left
+    text-align: left;
 }
 
 .instructions li {
-    padding: 1rem
+    padding: 0.7rem;
 }
 
 .pageName {
     text-align: left;
     font-size: 2rem;
     color: white;
-    padding: 2em 0rem 1rem 3.5rem
+    padding: 2em 0rem 1rem 3.5rem;
 }
 
 .instructionsPage button {
@@ -33,15 +33,26 @@
     font-weight: lighter;
     outline: none;
     left: 0;
-    margin-bottom: 2rem
+    position: absolute;
+    bottom: 3rem;
 }
 
 .handImage {
     text-align: left;
-    padding-top: 5rem
+    padding-top: 3rem;
 }
 
 .handImage img {
+    opacity: 0.7;
+    width: 90%;
+}
+
+.handImage1 {
+    text-align: right;
+    padding-top: 3rem;
+}
+
+.handImage1 img {
     opacity: 0.7;
     width: 90%;
 }

@@ -1,0 +1,20 @@
+<ion-content>
+    <div class="HistoryPage">
+        <div class="pageName">
+            Patient Details
+        </div>
+        <div class="allReadings">
+            <div class="readingItem">
+                <div class="pname" style="line-height:2rem">
+                    Patient Name - {{item.patientName}}<br> Age - {{item.patientAge}}<br> Height - {{item.patientHeight}}<br> Weight - {{item.patientWeight}}<br> Gender - {{item.patientGender}}<br> Value1 - {{item.value1}}<br> Value2 - {{item.value2}}<br>                    Value3 - {{item.value3}}<br> Value4 - {{item.value4}}<br> Value5 - {{item.value5}}<br> Value6 - {{item.value6}}<br> Value7 - {{item.value7}}<br> Value8 - {{item.value8}}<br> Value9 - {{item.value9}}<br> Score - {{item.score}}<br> Diagnosis
+                    - {{item.dignosis}}
+                </div>
+            </div>
+
+            <button (click)="goBack()">Back</button>
+        </div>
+    </div>
+    <div class="footer">
+        © Nadi horoscope, 2017
+    </div>
+</ion-content>

@@ -4,11 +4,17 @@
         <!-- <div class="userName">
             <ion-icon ios="ios-contact" md="ios-contact"></ion-icon> {{patient.name}}
         </div> -->
-        <div class="handImage">
+        <div class="handImage" *ngIf="patient.gender=='female'">
             <img src="assets/imgs/hand1.png" alt="" srcset="">
+        </div>
+        <div class="handImage1" *ngIf="patient.gender=='male'">
+            <img src="assets/imgs/hand2.png" alt="" srcset="">
         </div>
         <div class="instructions">
             <ul>
+                <li *ngIf="patient.gender=='female'">Band should be tied on left hand.</li>
+                <li *ngIf="patient.gender=='male'">Band should be tied on right hand.</li>
+                <li>Band should be be worn below the bone near the thumb on the wrist.</li>
                 <li>Band should not be very tight and must be placed exactly as shown in the image.</li>
                 <li>Eyes should be closed and legs apart.</li>
                 <li>Patient should not be asleep.</li>
@@ -16,7 +22,5 @@
         </div>
         <button (click)="showInputPage()">Start test</button>
     </div>
-    <div class="footer">
-        © Nadi horoscope, 2017
-    </div>
+
 </ion-content>
