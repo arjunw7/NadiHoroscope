@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { SurveyPage } from '../survey/survey';
+import { BluetoothSerial } from '@ionic-native/bluetooth-serial';
 
 @Component({
   selector: 'inputPage',
   templateUrl: 'input.html'
 })
 export class InputPage {
+  status:any
   patient: any;
   inputs = {
     "vatta_vatta": "",
@@ -126,8 +128,19 @@ export class InputPage {
       }
     ]
   }
-  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
+  constructor(private bluetoothSerial: BluetoothSerial, public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
     this.patient= navParams.get('patient');
+  }
+  connectDevice(){
+    this.bluetoothSerial.enable().then(success=>{
+      console.log("on")
+      this.status = "Bluetooth is turned on."
+      //once bluetooth is turned on, use discoverUnpaired() method to find unpaired devices
+      // and then connect(macAddress_or_uuid) method to connect to device you want to connect
+      // afte that user read() method to read from the buffer
+    }, error=>{
+      console.log("off")
+    })
   }
 
   showSurveyPage(){

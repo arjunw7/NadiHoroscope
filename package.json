@@ -23,6 +23,7 @@
     "@ionic-native/bluetooth-serial": "^4.5.3",
     "@ionic-native/camera": "^4.4.2",
     "@ionic-native/core": "4.3.2",
+    "@ionic-native/device": "^4.5.3",
     "@ionic-native/file": "^4.4.2",
     "@ionic-native/file-chooser": "^4.4.2",
     "@ionic-native/file-path": "^4.4.2",

@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 102:
+/***/ 103:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -63,7 +63,7 @@ var HomePage = (function () {
 
 /***/ }),
 
-/***/ 112:
+/***/ 113:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -76,11 +76,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 112;
+webpackEmptyAsyncContext.id = 113;
 
 /***/ }),
 
-/***/ 153:
+/***/ 154:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -93,7 +93,7 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 153;
+webpackEmptyAsyncContext.id = 154;
 
 /***/ }),
 
@@ -153,6 +153,7 @@ var InstructionsPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__survey_survey__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_bluetooth_serial__ = __webpack_require__(205);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -165,8 +166,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var InputPage = (function () {
-    function InputPage(navCtrl, navParams, toastCtrl) {
+    function InputPage(bluetoothSerial, navCtrl, navParams, toastCtrl) {
+        this.bluetoothSerial = bluetoothSerial;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.toastCtrl = toastCtrl;
@@ -290,6 +293,15 @@ var InputPage = (function () {
             }
         ];
     };
+    InputPage.prototype.connectDevice = function () {
+        var _this = this;
+        this.bluetoothSerial.enable().then(function (success) {
+            console.log("on");
+            _this.yes = "yesss";
+        }, function (error) {
+            console.log("off");
+        });
+    };
     InputPage.prototype.showSurveyPage = function () {
         if (!this.inputs.vatta_vatta || !this.inputs.vatta_pitta || !this.inputs.vatta_kapha || !this.inputs.pitta_vatta || !this.inputs.pitta_pitta || !this.inputs.pitta_kapha || !this.inputs.kapha_vatta || !this.inputs.kapha_pitta || !this.inputs.kapha_kapha) {
             this.presentToast("Please enter all the fields");
@@ -320,9 +332,9 @@ var InputPage = (function () {
     };
     InputPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'inputPage',template:/*ion-inline-start:"C:\Users\212601219\Desktop\ULCER\src\pages\input\input.html"*/`<ion-content>\n\n    <div class="inputPage">\n\n        <div class="pageName">\n\n            Enter all values\n\n        </div>\n\n        <div class="allFields">\n\n            <div class="field">\n\n                <label>1. Vatta-Vatta</label><br>\n\n                <input [(ngModel)]="inputs.vatta_vatta" type="number"><br>\n\n            </div>\n\n            <div class="field">\n\n                <label>2. Vatta-Pitta</label>\n\n                <input [(ngModel)]="inputs.vatta_pitta" type="number"><br>\n\n            </div>\n\n            <div class="field">\n\n                <label>3. Vatta-Kapha</label><br>\n\n                <input [(ngModel)]="inputs.vatta_kapha" type="number"><br>\n\n            </div>\n\n            <div class="field">\n\n                <label>4. Pitta-Vatta</label><br>\n\n                <input [(ngModel)]="inputs.pitta_vatta" type="number"><br>\n\n            </div>\n\n            <div class="field">\n\n                <label>5. Pitta-Pitta</label><br>\n\n                <input [(ngModel)]="inputs.pitta_pitta" type="number"><br>\n\n            </div>\n\n            <div class="field">\n\n                <label>6. Pitta-Kapha</label><br>\n\n                <input [(ngModel)]="inputs.pitta_kapha" type="number"><br>\n\n            </div>\n\n            <div class="field">\n\n                <label>7. Kapha-Vatta</label><br>\n\n                <input [(ngModel)]="inputs.kapha_vatta" type="number"><br>\n\n            </div>\n\n            <div class="field">\n\n                <label>8. Kapha-Pitta</label><br>\n\n                <input [(ngModel)]="inputs.kapha_pitta" type="number"><br>\n\n            </div>\n\n            <div class="field">\n\n                <label>9. Kapha-Kapha</label><br>\n\n                <input [(ngModel)]="inputs.kapha_kapha" type="number"><br>\n\n            </div>\n\n        </div>\n\n        <button (click)="showSurveyPage(inputData)">Continue</button>\n\n    </div>\n\n</ion-content>`/*ion-inline-end:"C:\Users\212601219\Desktop\ULCER\src\pages\input\input.html"*/
+            selector: 'inputPage',template:/*ion-inline-start:"C:\Users\212601219\Desktop\ULCER\src\pages\input\input.html"*/`<ion-content>\n\n    <div class="inputPage">\n\n        <div class="connectDevice"><button (click)="connectDevice()">Connect Device</button></div>\n\n        {{yes}}\n\n        <div class="pageName">\n\n            Enter all values\n\n        </div>\n\n        <div class="allFields">\n\n            <div class="field">\n\n                <label>1. Vatta-Vatta</label><br>\n\n                <input [(ngModel)]="inputs.vatta_vatta" type="number"><br>\n\n            </div>\n\n            <div class="field">\n\n                <label>2. Vatta-Pitta</label>\n\n                <input [(ngModel)]="inputs.vatta_pitta" type="number"><br>\n\n            </div>\n\n            <div class="field">\n\n                <label>3. Vatta-Kapha</label><br>\n\n                <input [(ngModel)]="inputs.vatta_kapha" type="number"><br>\n\n            </div>\n\n            <div class="field">\n\n                <label>4. Pitta-Vatta</label><br>\n\n                <input [(ngModel)]="inputs.pitta_vatta" type="number"><br>\n\n            </div>\n\n            <div class="field">\n\n                <label>5. Pitta-Pitta</label><br>\n\n                <input [(ngModel)]="inputs.pitta_pitta" type="number"><br>\n\n            </div>\n\n            <div class="field">\n\n                <label>6. Pitta-Kapha</label><br>\n\n                <input [(ngModel)]="inputs.pitta_kapha" type="number"><br>\n\n            </div>\n\n            <div class="field">\n\n                <label>7. Kapha-Vatta</label><br>\n\n                <input [(ngModel)]="inputs.kapha_vatta" type="number"><br>\n\n            </div>\n\n            <div class="field">\n\n                <label>8. Kapha-Pitta</label><br>\n\n                <input [(ngModel)]="inputs.kapha_pitta" type="number"><br>\n\n            </div>\n\n            <div class="field">\n\n                <label>9. Kapha-Kapha</label><br>\n\n                <input [(ngModel)]="inputs.kapha_kapha" type="number"><br>\n\n            </div>\n\n        </div>\n\n        <button (click)="showSurveyPage(inputData)">Continue</button>\n\n    </div>\n\n</ion-content>`/*ion-inline-end:"C:\Users\212601219\Desktop\ULCER\src\pages\input\input.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ToastController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__ionic_native_bluetooth_serial__["a" /* BluetoothSerial */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ToastController */]])
     ], InputPage);
     return InputPage;
 }());
@@ -721,7 +733,7 @@ var ResultPage = (function () {
 
 /***/ }),
 
-/***/ 205:
+/***/ 206:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -729,7 +741,7 @@ var ResultPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_pouchService__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__historyItem_historyItem__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__historyItem_historyItem__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__landing_landing__ = __webpack_require__(52);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -777,14 +789,14 @@ var HistoryPage = (function () {
 
 /***/ }),
 
-/***/ 206:
+/***/ 207:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoryItemPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_pouchService__ = __webpack_require__(41);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -826,13 +838,13 @@ var HistoryItemPage = (function () {
 
 /***/ }),
 
-/***/ 207:
+/***/ 208:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(231);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(232);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -840,7 +852,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 231:
+/***/ 232:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -848,25 +860,27 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(275);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_pouchService__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_landing_landing__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_instructions_instructions__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_input_input__ = __webpack_require__(198);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_survey_survey__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_result_result__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_history_history__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_historyItem_historyItem__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_history_history__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_historyItem_historyItem__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_forms__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__ = __webpack_require__(194);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_bluetooth_serial__ = __webpack_require__(205);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -922,6 +936,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_4__services_pouchService__["a" /* PouchService */],
                 __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_16__ionic_native_bluetooth_serial__["a" /* BluetoothSerial */],
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
             ]
         })
@@ -933,14 +948,14 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 274:
+/***/ 275:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(194);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_landing_landing__ = __webpack_require__(52);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -983,7 +998,7 @@ var MyApp = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PouchService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_pouchdb__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_pouchdb__ = __webpack_require__(284);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1082,9 +1097,9 @@ var PouchService = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LandingPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_pouchService__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__history_history__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__history_history__ = __webpack_require__(206);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1150,5 +1165,5 @@ var LandingPage = (function () {
 
 /***/ })
 
-},[207]);
+},[208]);
 //# sourceMappingURL=main.js.map

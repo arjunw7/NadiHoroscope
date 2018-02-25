@@ -7,10 +7,31 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-android-permissions": {
+            "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
+        },
+        "cordova-plugin-bluetooth-serial": {
+            "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
+        },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
         },
         "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
+        },
+        "cordova-plugin-filepath": {
+            "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
+        },
+        "cordova-plugin-ionic-webview": {
             "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
         },
         "cordova-plugin-splashscreen": {
@@ -23,27 +44,6 @@
             "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
-        },
-        "cordova-plugin-android-permissions": {
-            "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
-        },
-        "cordova-plugin-camera": {
-            "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
-        },
-        "cordova-plugin-ionic-webview": {
-            "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
-        },
-        "cordova-plugin-filechooser": {
-            "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
-        },
-        "cordova-plugin-file": {
-            "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
-        },
-        "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
-        },
-        "cordova-plugin-filepath": {
             "PACKAGE_NAME": "com.ionicframework.ionreddit220090"
         }
     },
